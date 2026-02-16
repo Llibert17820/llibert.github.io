@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Llibert</title>
+    <meta name="description" content="Llibert - Envia'ns un missatge">
+    <meta name="author" content="Llibert">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Llibert">
+    <meta property="og:description" content="Envia'ns un missatge">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://[usuario].github.io">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Llibert">
+    <meta name="twitter:description" content="Envia'ns un missatge">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,300;0,400;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main class="container">
+        <!-- Title -->
+        <h1 class="main-title">Llibert</h1>
+        
+        <!-- Subtitle -->
+        <p class="subtitle">Envia'ns un missatge:</p>
+
+        <!-- Contact Form -->
+        <section class="contact-section">
+            <form class="contact-form" id="contactForm" action="https://formspree.io/f/TU_FORM_ID" method="POST">
+                <input type="hidden" name="_to" value="llibert17820@gmail.com">
+                <input type="hidden" name="_subject" value="Nou missatge des de Llibert">
+                
+                <div class="form-group">
+                    <textarea 
+                        name="message" 
+                        id="message" 
+                        class="form-input" 
+                        placeholder="Escriu el teu missatge aquí..." 
+                        required
+                        rows="4"
+                    ></textarea>
+                </div>
+                <button type="submit" class="submit-button">
+                    Enviar
+                </button>
+            </form>
+            <p class="form-note" id="statusMessage"></p>
+        </section>
+    </main>
+
+    <!-- Simple JavaScript for form handling -->
+    <script>
+        const form = document.getElementById('contactForm');
+        const statusMessage = document.getElementById('statusMessage');
+
+        form.addEventListener('submit', function(e) {
+            // Si usas Formspree, no necesitas preventDefault
+            // Solo mostramos un mensaje de confirmación
+            setTimeout(() => {
+                statusMessage.textContent = 'Missatge enviat correctament.';
+                statusMessage.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
